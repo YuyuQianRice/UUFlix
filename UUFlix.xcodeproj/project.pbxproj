@@ -16,6 +16,11 @@
 		895791892542884E00CA7B14 /* UUFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895791882542884E00CA7B14 /* UUFlixTests.swift */; };
 		895791942542884E00CA7B14 /* UUFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895791932542884E00CA7B14 /* UUFlixUITests.swift */; };
 		895791B325428AC900CA7B14 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895791B225428AC900CA7B14 /* Extensions.swift */; };
+		89905F242542B45A00C65390 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89905F232542B45A00C65390 /* MovieService.swift */; };
+		89905F2C2542B46500C65390 /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89905F2B2542B46500C65390 /* MovieStore.swift */; };
+		89905F322542B4E400C65390 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89905F312542B4E400C65390 /* Utils.swift */; };
+		89905F372542B50400C65390 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89905F362542B50400C65390 /* Movie.swift */; };
+		89905F54254365A100C65390 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89905F53254365A100C65390 /* MovieCell.swift */; };
 		9892FA1290ACABF1C77A0F07 /* Pods_UUFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4316BBE0F004479E180DF131 /* Pods_UUFlix.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +59,12 @@
 		895791932542884E00CA7B14 /* UUFlixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUFlixUITests.swift; sourceTree = "<group>"; };
 		895791952542884E00CA7B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895791B225428AC900CA7B14 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		89905F232542B45A00C65390 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		89905F2B2542B46500C65390 /* MovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
+		89905F312542B4E400C65390 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		89905F362542B50400C65390 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		89905F53254365A100C65390 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		89905F5825436B9700C65390 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 		EB6A5A83944D0C57924C9F4F /* Pods-UUFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUFlix.release.xcconfig"; path = "Target Support Files/Pods-UUFlix/Pods-UUFlix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +119,8 @@
 		895791702542884C00CA7B14 /* UUFlix */ = {
 			isa = PBXGroup;
 			children = (
-				89905F202542AB1E00C65390 /* Network */,
+				89905F302542B4C500C65390 /* DataModels */,
+				89905F202542AB1E00C65390 /* Services */,
 				895791A72542888100CA7B14 /* Controllers */,
 				895791A62542887800CA7B14 /* Views */,
 				895791A52542886D00CA7B14 /* ViewModels */,
@@ -142,6 +154,8 @@
 				895791712542884C00CA7B14 /* AppDelegate.swift */,
 				895791732542884C00CA7B14 /* SceneDelegate.swift */,
 				895791B225428AC900CA7B14 /* Extensions.swift */,
+				89905F312542B4E400C65390 /* Utils.swift */,
+				89905F5825436B9700C65390 /* Movies.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -166,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				895791752542884C00CA7B14 /* MovieViewController.swift */,
+				89905F53254365A100C65390 /* MovieCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,11 +194,21 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		89905F202542AB1E00C65390 /* Network */ = {
+		89905F202542AB1E00C65390 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				89905F232542B45A00C65390 /* MovieService.swift */,
+				89905F2B2542B46500C65390 /* MovieStore.swift */,
 			);
-			path = Network;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		89905F302542B4C500C65390 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				89905F362542B50400C65390 /* Movie.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		8D0C55B6A793FE4436C62E15 /* Pods */ = {
@@ -379,8 +404,13 @@
 			files = (
 				895791762542884C00CA7B14 /* MovieViewController.swift in Sources */,
 				895791722542884C00CA7B14 /* AppDelegate.swift in Sources */,
+				89905F54254365A100C65390 /* MovieCell.swift in Sources */,
 				895791742542884C00CA7B14 /* SceneDelegate.swift in Sources */,
+				89905F322542B4E400C65390 /* Utils.swift in Sources */,
 				895791B325428AC900CA7B14 /* Extensions.swift in Sources */,
+				89905F2C2542B46500C65390 /* MovieStore.swift in Sources */,
+				89905F372542B50400C65390 /* Movie.swift in Sources */,
+				89905F242542B45A00C65390 /* MovieService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
