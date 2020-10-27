@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Utils {
     
@@ -21,4 +22,58 @@ class Utils {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         return dateFormatter
     }()
+}
+
+func getPoster(posterURL: URL, imageView: UIImageView) {
+    // get data
+    // conver the data to image
+    // set image to image view
+   
+//    print(imageUrlString)
+//    guard let url = URL(string: imageUrlString) else {
+//        return
+//    }
+    
+    let getDataTask = URLSession.shared.dataTask(with: posterURL,
+                                                 completionHandler: {
+                                                    data, _, error in
+                                                    guard let data = data, error == nil else {
+                                                        return
+                                                    
+                                                    }
+                                                    DispatchQueue.main.async {
+                                                        let image = UIImage(data: data)
+                                                        imageView.image = image
+                                                    }
+
+                                                 })
+    getDataTask.resume()
+    
+}
+
+func getPoster(posterURL: URL, imageView: UIImageView, pixel: Int) {
+    // get data
+    // conver the data to image
+    // set image to image view
+   
+//    print(imageUrlString)
+//    guard let url = URL(string: imageUrlString) else {
+//        return
+//    }
+    
+    let getDataTask = URLSession.shared.dataTask(with: posterURL,
+                                                 completionHandler: {
+                                                    data, _, error in
+                                                    guard let data = data, error == nil else {
+                                                        return
+                                                    
+                                                    }
+                                                    DispatchQueue.main.async {
+                                                        let image = UIImage(data: data)
+                                                        imageView.image = image
+                                                    }
+
+                                                 })
+    getDataTask.resume()
+    
 }

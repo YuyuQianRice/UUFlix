@@ -15,7 +15,7 @@ class MovieViewController: UIViewController {
     
     private let movieService = MovieStore.shared
     
-    var movies: [Movie]?
+    var movies: [MovieCodepath]?
     var isLoading: Bool = false
     var error: NSError?
     
@@ -35,6 +35,7 @@ class MovieViewController: UIViewController {
         scrollView.backgroundColor = .darkGray
         view.addSubview(scrollView)
         
+
         
         tableView.frame = CGRect(x: 0,
                                  y: 0,
@@ -54,27 +55,38 @@ class MovieViewController: UIViewController {
 
     // ––––– TODO: Get data from API helper and retrieve restaurants
     func getMovieData() {
-//        API.getRestaurants() { (completionRestaurants) in
-//            guard let restaurants = completionRestaurants else {
-//                return
+        MovieAPI_Codepath.getMovies(completion: {
+            competionMovies in
+            guard let competionMovies = competionMovies else {
+                return
+            }
+            self.movies = competionMovies
+            self.tableView.reloadData()
+        })
+        
+//        func getAPIData() {
+//            API.getRestaurants() { (restaurants) in
+//                guard let restaurants = restaurants else {
+//                    return
+//                }
+//                self.restaurantsArray = restaurants
+//                self.tableView.reloadData()
 //            }
-//            self.restaurantsArray = restaurants
-//            self.tableView.reloadData()
 //        }
         
-        movieService.fetchMovies(from: .popular) { [weak self] (result) in
-            guard let self = self else { return }
-            self.isLoading = false
-            switch result {
-            
-            case .success(let response):
-                self.movies = response.results
-                self.tableView.reloadData()//reload table
-                
-            case .failure(let error):
-                self.error = error as NSError
-            }
-        }
+//        movieService.fetchMovies(from: .popular) { [weak self] (result) in
+//            guard let self = self else { return }
+//            self.isLoading = false
+//            switch result {
+//
+//            case .success(let response):
+//                self.movies = response.results
+//                self.tableView.reloadData()//reload table
+//
+//            case .failure(let error):
+//                self.error = error as NSError
+//            }
+//        }
         
         
     }
@@ -96,12 +108,13 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
 
 //        cell.textLabel?.text = self.movies![indexPath.row].title
-        let curMovie = self.movies![indexPath.row]
+//        let curMovie = self.movies![indexPath.row]
+//
+//        cell.movieTitle.text = curMovie.title
+//        cell.movieIntro.text = curMovie.overview
+
+        cell.movie = self.movies![indexPath.row]
         
-        cell.movieTitle.text = curMovie.title
-        cell.movieIntro.text = curMovie.overview
-        let imageUrlString = curMovie.posterURL.absoluteString
-        getPoster(imageUrlString: imageUrlString, imageView: cell.moviePoster)
         
         cell.movieTitle.frame = CGRect(x: cell.moviePoster.width,
                                        y: 0,
@@ -121,32 +134,16 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-}
-
-
-func getPoster(imageUrlString: String, imageView: UIImageView) {
-    // get data
-    // conver the data to image
-    // set image to image view
-   
-//    print(imageUrlString)
-    guard let url = URL(string: imageUrlString) else {
-        return
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let movie = movies![indexPath.row]
+            let detailVC = segue.destination as! MovieDetailViewController
+            detailVC.movie = movie
+        }
     }
-    
-    let getDataTask = URLSession.shared.dataTask(with: url,
-                                                 completionHandler: {
-                                                    data, _, error in
-                                                    guard let data = data, error == nil else {
-                                                        return
-                                                    
-                                                    }
-                                                    DispatchQueue.main.async {
-                                                        let image = UIImage(data: data)
-                                                        imageView.image = image
-                                                    }
-
-                                                 })
-    getDataTask.resume()
-    
 }
+
+
