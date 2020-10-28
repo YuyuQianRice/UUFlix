@@ -8,8 +8,8 @@
 import Foundation
 
 class MovieCodepath {
-    var poster_path: URL?
-    var backdrop_path: URL?
+    var poster_path: String?
+    var backdrop_path: String?
     var vote_count: Int
     var popularity: Double
     var adult: Bool
@@ -21,8 +21,10 @@ class MovieCodepath {
     var release_date: String
     
     init(dict: [String: Any]) {
-        poster_path = URL(string: "https://image.tmdb.org/t/p/w500\(dict["poster_path"] ?? "")")!
-        backdrop_path = URL(string: "https://image.tmdb.org/t/p/w500\(dict["backdrop_path"] ?? "")")!
+//        poster_path = URL(string: "https://image.tmdb.org/t/p/w500\(dict["poster_path"] ?? "")")!
+        poster_path = dict["poster_path"] as! String
+//        backdrop_path = URL(string: "https://image.tmdb.org/t/p/w500\(dict["backdrop_path"] ?? "")")!
+        backdrop_path = dict["backdrop_path"] as! String
         vote_count = dict["vote_count"] as! Int
         popularity = dict["popularity"] as! Double
         adult = dict["adult"] as! Bool

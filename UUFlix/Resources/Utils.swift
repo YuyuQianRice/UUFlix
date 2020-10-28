@@ -24,44 +24,18 @@ class Utils {
     }()
 }
 
-func getPoster(posterURL: URL, imageView: UIImageView) {
+func getPoster(imageUrl: String, imageView: UIImageView, pixel: Int = 500) {
     // get data
     // conver the data to image
     // set image to image view
    
 //    print(imageUrlString)
-//    guard let url = URL(string: imageUrlString) else {
-//        return
-//    }
+    let path = "https://image.tmdb.org/t/p/w\(pixel)\(imageUrl)"
+    guard let url = URL(string: path) else {
+        return
+    }
     
-    let getDataTask = URLSession.shared.dataTask(with: posterURL,
-                                                 completionHandler: {
-                                                    data, _, error in
-                                                    guard let data = data, error == nil else {
-                                                        return
-                                                    
-                                                    }
-                                                    DispatchQueue.main.async {
-                                                        let image = UIImage(data: data)
-                                                        imageView.image = image
-                                                    }
-
-                                                 })
-    getDataTask.resume()
-    
-}
-
-func getPoster(posterURL: URL, imageView: UIImageView, pixel: Int) {
-    // get data
-    // conver the data to image
-    // set image to image view
-   
-//    print(imageUrlString)
-//    guard let url = URL(string: imageUrlString) else {
-//        return
-//    }
-    
-    let getDataTask = URLSession.shared.dataTask(with: posterURL,
+    let getDataTask = URLSession.shared.dataTask(with: url,
                                                  completionHandler: {
                                                     data, _, error in
                                                     guard let data = data, error == nil else {

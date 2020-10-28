@@ -24,6 +24,8 @@
 		89FADA4C2547F928000367F2 /* MovieServiceCodepath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FADA4B2547F928000367F2 /* MovieServiceCodepath.swift */; };
 		89FADA512547F9D5000367F2 /* MovieCodepath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FADA502547F9D5000367F2 /* MovieCodepath.swift */; };
 		89FADA59254805D3000367F2 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FADA58254805D3000367F2 /* MovieDetailViewController.swift */; };
+		89FADA66254942A2000367F2 /* MovieGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FADA65254942A1000367F2 /* MovieGridViewController.swift */; };
+		89FADA6E2549443D000367F2 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FADA6D2549443D000367F2 /* MovieCollectionViewCell.swift */; };
 		9892FA1290ACABF1C77A0F07 /* Pods_UUFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4316BBE0F004479E180DF131 /* Pods_UUFlix.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		89FADA4B2547F928000367F2 /* MovieServiceCodepath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceCodepath.swift; sourceTree = "<group>"; };
 		89FADA502547F9D5000367F2 /* MovieCodepath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCodepath.swift; sourceTree = "<group>"; };
 		89FADA58254805D3000367F2 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		89FADA65254942A1000367F2 /* MovieGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridViewController.swift; sourceTree = "<group>"; };
+		89FADA6D2549443D000367F2 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB6A5A83944D0C57924C9F4F /* Pods-UUFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUFlix.release.xcconfig"; path = "Target Support Files/Pods-UUFlix/Pods-UUFlix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				89905F53254365A100C65390 /* MovieCell.swift */,
+				89FADA6D2549443D000367F2 /* MovieCollectionViewCell.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			children = (
 				895791752542884C00CA7B14 /* MovieViewController.swift */,
 				89FADA58254805D3000367F2 /* MovieDetailViewController.swift */,
+				89FADA65254942A1000367F2 /* MovieGridViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 			files = (
 				895791762542884C00CA7B14 /* MovieViewController.swift in Sources */,
 				895791722542884C00CA7B14 /* AppDelegate.swift in Sources */,
+				89FADA66254942A2000367F2 /* MovieGridViewController.swift in Sources */,
 				89905F54254365A100C65390 /* MovieCell.swift in Sources */,
 				895791742542884C00CA7B14 /* SceneDelegate.swift in Sources */,
 				89FADA59254805D3000367F2 /* MovieDetailViewController.swift in Sources */,
@@ -421,6 +428,7 @@
 				89905F2C2542B46500C65390 /* MovieStore.swift in Sources */,
 				89905F372542B50400C65390 /* Movie.swift in Sources */,
 				89FADA4C2547F928000367F2 /* MovieServiceCodepath.swift in Sources */,
+				89FADA6E2549443D000367F2 /* MovieCollectionViewCell.swift in Sources */,
 				89FADA512547F9D5000367F2 /* MovieCodepath.swift in Sources */,
 				89905F242542B45A00C65390 /* MovieService.swift in Sources */,
 			);

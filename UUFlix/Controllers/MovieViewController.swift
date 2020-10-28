@@ -25,11 +25,10 @@ class MovieViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        
-        scrollView.frame = CGRect(x: 10,
+                
+        scrollView.frame = CGRect(x: 0,
                                   y: 30,
-                                  width: view.width - 20,
+                                  width: view.width,
                                   height: view.height - 50)
         
         scrollView.backgroundColor = .darkGray
@@ -99,7 +98,7 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0;//Choose your custom row height
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies?.count ?? 0
     }

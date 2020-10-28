@@ -18,7 +18,7 @@ class MovieCell: UITableViewCell {
     
     var movie: MovieCodepath! {
         didSet {
-            getPoster(posterURL: movie.poster_path!, imageView: moviePoster)
+            getPoster(imageUrl: movie.poster_path!, imageView: moviePoster)
             movieTitle.text = movie.title
             movieIntro.text = movie.overview
 
