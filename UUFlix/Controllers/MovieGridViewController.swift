@@ -19,12 +19,14 @@ class MovieGridViewController: UIViewController{
         collectionView.delegate = self
         collectionView.dataSource = self
         
-//        // for the collection cell layout
-//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        layout.minimumLineSpacing = 0
-//        layout.minimumInteritemSpacing = 0
-//        layout.itemSize = CGSize(width: view.width / 2, height: view.width * 3 / 4)
-        
+        // for the collection cell layout
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: self.collectionView.width / 2 , height: self.collectionView.width * 3 / 4)
+//        layout.itemSize = CGSize(width: 200 , height: 300)
+//        layout.itemSize = CGSize(width: 50, height: 50 * 3 / 2)
+        view.addSubview(collectionView)
         getMovieData()
         // Do any additional setup after loading the view.
     }
@@ -60,15 +62,28 @@ extension MovieGridViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionCell", for: indexPath) as! MovieCollectionViewCell
-        
+                
         cell.movie = self.movies![indexPath.row]
+        cell.moviePoster.frame = CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height)
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UICollectionViewCell
+        if let indexPath = collectionView.indexPath(for: cell){
+            let movie = movies![indexPath.row]
+            let detailVC = segue.destination as! MovieDetailViewController
+            detailVC.movie = movie
+        }
+    }
     
 }
 
+//// to controll the size of grid
 //extension MovieGridViewController: UICollectionViewDelegateFlowLayout {
 //
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: self.collectionView.width / 2 , height: self.collectionView.width * 3 / 4)
+//    }
 //}
 

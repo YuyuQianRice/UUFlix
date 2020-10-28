@@ -167,23 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TY-ra-YZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="1878"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="UEJ-9Y-oEM">
-            <objects>
-                <viewController id="i9D-bb-Ddu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xfh-nZ-Ib1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="pBd-UU-eCy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vMr-El-BbC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYQ-rC-aNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1371" y="1886"/>
+            <point key="canvasLocation" x="683" y="1875"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="uqV-kp-d63">
@@ -216,7 +200,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oiY-6q-Fi2">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oiY-6q-Fi2">
                                     <size key="itemSize" width="172" height="196"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -236,9 +220,9 @@
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="172" height="196"/>
                                         <connections>
                                             <outlet property="moviePoster" destination="KbM-nR-MOE" id="hlB-iR-vbi"/>
+                                            <segue destination="taG-zA-Og1" kind="show" id="sv6-SM-GcD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -250,7 +234,6 @@
                     <navigationItem key="navigationItem" title="Superhero" id="Iwb-uL-1Xr"/>
                     <connections>
                         <outlet property="collectionView" destination="4xH-sV-Gaa" id="2KQ-JJ-pXY"/>
-                        <segue destination="i9D-bb-Ddu" kind="show" id="rex-tF-9uM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPA-jh-wwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -277,6 +260,9 @@
             <point key="canvasLocation" x="1370" y="296"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sv6-SM-GcD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
