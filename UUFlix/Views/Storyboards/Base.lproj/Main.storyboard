@@ -96,7 +96,7 @@
                             <constraint firstItem="GzC-Sw-eN3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="33" id="jVH-Fa-ZzZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Now Playing" id="wGK-2r-tPN"/>
+                    <navigationItem key="navigationItem" title="Now Playing" largeTitleDisplayMode="always" id="wGK-2r-tPN"/>
                     <connections>
                         <outlet property="scrollView" destination="GzC-Sw-eN3" id="rGF-O1-eQ1"/>
                         <outlet property="tableView" destination="nIw-jh-mi3" id="Ivs-cH-8qb"/>
@@ -173,7 +173,7 @@
         <scene sceneID="uqV-kp-d63">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VCy-E7-PG1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Now Playing" id="iDh-Tz-HBA"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" image="now_playing_tabbar_item" id="iDh-Tz-HBA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AY8-DG-iff">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -231,7 +231,7 @@
                         <viewLayoutGuide key="safeArea" id="DYo-jJ-BIv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Superhero" id="Iwb-uL-1Xr"/>
+                    <navigationItem key="navigationItem" title="Superhero" largeTitleDisplayMode="always" id="Iwb-uL-1Xr"/>
                     <connections>
                         <outlet property="collectionView" destination="4xH-sV-Gaa" id="2KQ-JJ-pXY"/>
                     </connections>
@@ -244,7 +244,7 @@
         <scene sceneID="Zgc-ng-1Wu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EPi-BP-Jux" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Superhero" id="8NK-Ry-CQ4"/>
+                    <tabBarItem key="tabBarItem" title="Superhero" image="superhero_tabbar_item" id="8NK-Ry-CQ4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X9x-Qv-Sw9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -264,6 +264,8 @@
         <segue reference="sv6-SM-GcD"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="now_playing_tabbar_item" width="21" height="21"/>
+        <image name="superhero_tabbar_item" width="21" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

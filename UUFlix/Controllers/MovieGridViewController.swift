@@ -15,6 +15,7 @@ class MovieGridViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height)
         collectionView.backgroundColor = .black
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -74,7 +74,7 @@ class MovieDetailViewController: UIViewController {
         scrollView.addSubview(posterImageView)
         
         titleLabel.frame = CGRect(x: posterImageView.right,
-                                  y: backgroundImageView.bottom + 30,
+                                  y: posterImageView.top + posterImageView.height / 3,
                                   width: scrollView.width - posterImageView.right,
                                   height: 20)
         
@@ -84,7 +84,7 @@ class MovieDetailViewController: UIViewController {
         scrollView.addSubview(titleLabel)
         
         dateLabel.frame = CGRect(x: posterImageView.right,
-                                  y: posterImageView.bottom - 60,
+                                  y: posterImageView.top + posterImageView.height * 2 / 3,
                                   width: scrollView.width - posterImageView.right,
                                   height: 20)
         dateLabel.textColor = .white
