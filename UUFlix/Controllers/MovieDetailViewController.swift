@@ -50,8 +50,8 @@ class MovieDetailViewController: UIViewController {
         scrollView.frame = CGRect(x: 0,
                                   y: 0,
                                   width: view.width,
-                                  height: view.height)
-        
+                                  height: view.height - (self.tabBarController?.tabBar.height)!)
+        print("\(self.tabBarController?.tabBar.height)")
         
         backgroundImageView.frame = CGRect(x: 0,
                                   y: 0,
@@ -60,9 +60,14 @@ class MovieDetailViewController: UIViewController {
         scrollView.addSubview(backgroundImageView)
         backgroundImageView.contentMode = .scaleAspectFill
         
-        posterImageView.frame.origin.x = 0
-        posterImageView.frame.origin.y = 300
-        posterImageView.frame.size.height = 200
+        let posterRatio = 0.8
+        posterImageView.frame = CGRect(x: 0,
+                                       y: Int(backgroundImageView.bottom) - Int(150 * posterRatio),
+                                  width: Int(200 * posterRatio),
+                                  height: Int(300 * posterRatio))
+//        posterImageView.frame.origin.x = 0
+//        posterImageView.frame.origin.y = 300
+//        posterImageView.frame.size.height = 200
         posterImageView.layer.shadowRadius = 10
         posterImageView.layer.shadowColor = UIColor.black.cgColor
         posterImageView.layer.shadowOpacity = 1
